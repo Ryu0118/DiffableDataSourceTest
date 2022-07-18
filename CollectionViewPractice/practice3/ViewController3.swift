@@ -24,10 +24,6 @@ class ViewController3: UIViewController {
     var isTopExpanded = false
     var isAdvanceExpanded = false
     
-    var basicItems = [Item]()
-    var advanceItems = [Item]()
-    var topItems = [Item]()
-    
     enum Section: CaseIterable {
         case graph
         case basic
@@ -50,7 +46,7 @@ class ViewController3: UIViewController {
         
         setupDataSource()
         configureCells()
-        //configureLayout()
+        configureLayout()
     }
     
     private func setupDataSource() {
@@ -66,8 +62,9 @@ class ViewController3: UIViewController {
                 cell.delegate = self
                 cell.configure(level: level)
                 return cell
-            case .circleProgress(_, _, _):
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath)
+            case .circleProgress(_, _, let progress):
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell3", for: indexPath) as! CollectionViewCell3
+                cell.setProgress(progress)
                 return cell
             }
         }
@@ -92,10 +89,13 @@ class ViewController3: UIViewController {
                                                                       count: 2)
         return NSCollectionLayoutSection(group: verticalRectangleGroup)
     }
-
+    
     
     private func configureLayout() {
-        let layout = UICollectionViewCompositionalLayout { [unowned self] (sectionIndex: Int, _: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
+        let config = UICollectionViewCompositionalLayoutConfiguration()
+        config.interSectionSpacing = 10
+        
+        let layout = UICollectionViewCompositionalLayout(sectionProvider: {[unowned self] (sectionIndex: Int, _: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
             //guard let self = self else { return nil }
             let sectionKind = self.dataSource.snapshot().sectionIdentifiers[sectionIndex]
             switch sectionKind {
@@ -104,7 +104,8 @@ class ViewController3: UIViewController {
             case .basic, .advance, .top:
                 return levelSectionLayout(collectionViewBounds: collectionView.bounds)
             }
-        }
+        }, configuration: config)
+
         collectionView.collectionViewLayout = layout
     }
     
@@ -115,26 +116,86 @@ class ViewController3: UIViewController {
         case .basic:
             defer { isBasicExpanded = !isBasicExpanded }
             if !isBasicExpanded {
-                snapshot.insertItems([.circleProgress(level: .basic, category: "法律", progress: 0.4)], afterItem: .levelCell(level: .basic))
+                snapshot.insertItems([
+                    .circleProgress(level: .basic, category: "法律", progress: 0.4),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.5),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.6),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.7),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.8),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.9),
+                    .circleProgress(level: .basic, category: "法律", progress: 1),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.99),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.98),
+                ], afterItem: .levelCell(level: .basic))
             }
             else {
-                snapshot.deleteItems([.circleProgress(level: .basic, category: "法律", progress: 0.4)])
+                snapshot.deleteItems([
+                    .circleProgress(level: .basic, category: "法律", progress: 0.4),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.5),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.6),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.7),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.8),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.9),
+                    .circleProgress(level: .basic, category: "法律", progress: 1),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.99),
+                    .circleProgress(level: .basic, category: "法律", progress: 0.98),
+                ])
             }
         case .advance:
             defer { isAdvanceExpanded = !isAdvanceExpanded }
             if !isAdvanceExpanded {
-                snapshot.insertItems([.circleProgress(level: .advance, category: "法律", progress: 0.4), .circleProgress(level: .advance, category: "企業", progress: 0.2), .circleProgress(level: .advance, category: "法", progress: 0.4), .circleProgress(level: .advance, category: "業", progress: 0.2)], afterItem: .levelCell(level: .advance))
+                snapshot.insertItems([
+                    .circleProgress(level: .advance, category: "法律", progress: 0.4),
+                    .circleProgress(level: .advance, category: "企業", progress: 0.2),
+                    .circleProgress(level: .advance, category: "法", progress: 0.4),
+                    .circleProgress(level: .advance, category: "業", progress: 0.2),
+                    .circleProgress(level: .advance, category: "法律", progress: 0.8),
+                    .circleProgress(level: .advance, category: "企業", progress: 0.84),
+                    .circleProgress(level: .advance, category: "法", progress: 0.42),
+                    .circleProgress(level: .advance, category: "業", progress: 0.23),
+                    .circleProgress(level: .advance, category: "業", progress: 0.21),
+                ], afterItem: .levelCell(level: .advance))
             }
             else {
-                snapshot.deleteItems([.circleProgress(level: .advance, category: "法律", progress: 0.4), .circleProgress(level: .advance, category: "企業", progress: 0.2), .circleProgress(level: .advance, category: "法", progress: 0.4), .circleProgress(level: .advance, category: "業", progress: 0.2)])
+                snapshot.deleteItems([
+                    .circleProgress(level: .advance, category: "法律", progress: 0.4),
+                    .circleProgress(level: .advance, category: "企業", progress: 0.2),
+                    .circleProgress(level: .advance, category: "法", progress: 0.4),
+                    .circleProgress(level: .advance, category: "業", progress: 0.2),
+                    .circleProgress(level: .advance, category: "法律", progress: 0.8),
+                    .circleProgress(level: .advance, category: "企業", progress: 0.84),
+                    .circleProgress(level: .advance, category: "法", progress: 0.42),
+                    .circleProgress(level: .advance, category: "業", progress: 0.23),
+                    .circleProgress(level: .advance, category: "業", progress: 0.21),
+                ])
             }
         case .top:
             defer { isTopExpanded = !isTopExpanded }
             if !isTopExpanded {
-                snapshot.insertItems([.circleProgress(level: .top, category: "法律", progress: 0.4)], afterItem: .levelCell(level: .top))
+                snapshot.insertItems([
+                    .circleProgress(level: .top, category: "法律", progress: 0.4),
+                    .circleProgress(level: .top, category: "企業", progress: 0.2),
+                    .circleProgress(level: .top, category: "法", progress: 0.4),
+                    .circleProgress(level: .top, category: "業", progress: 0.2),
+                    .circleProgress(level: .top, category: "法律", progress: 0.8),
+                    .circleProgress(level: .top, category: "企業", progress: 0.84),
+                    .circleProgress(level: .top, category: "法", progress: 0.42),
+                    .circleProgress(level: .top, category: "業", progress: 0.23),
+                    .circleProgress(level: .top, category: "業", progress: 0.33),
+                ], afterItem: .levelCell(level: .top))
             }
             else {
-                snapshot.deleteItems([.circleProgress(level: .top, category: "法律", progress: 0.4)])
+                snapshot.deleteItems([
+                    .circleProgress(level: .top, category: "法律", progress: 0.4),
+                    .circleProgress(level: .top, category: "企業", progress: 0.2),
+                    .circleProgress(level: .top, category: "法", progress: 0.4),
+                    .circleProgress(level: .top, category: "業", progress: 0.2),
+                    .circleProgress(level: .top, category: "法律", progress: 0.8),
+                    .circleProgress(level: .top, category: "企業", progress: 0.84),
+                    .circleProgress(level: .top, category: "法", progress: 0.42),
+                    .circleProgress(level: .top, category: "業", progress: 0.23),
+                    .circleProgress(level: .top, category: "業", progress: 0.33),
+                ])
             }
         }
     }
@@ -145,37 +206,27 @@ class ViewController3: UIViewController {
         //        let lineCount = itemCount - 1
         //        let itemSpacing = CGFloat(1)
         //        let itemLength = (collectionViewBounds.width - (itemSpacing * CGFloat(lineCount))) / CGFloat(itemCount)
-        let largeItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                                                  heightDimension: .absolute(70)))
-        let largeGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                    
-                                                                                             heightDimension: .absolute(70)), subitem: largeItem, count: 1
-                                                          
-        )
-        
+        let largeItem = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(70)))
+
         let itemCount = 3 // 横に並べる数
         let lineCount = itemCount - 1
         let itemSpacing = CGFloat(1) // セル間のスペース
         let itemLength = (collectionViewBounds.width - (itemSpacing * CGFloat(lineCount))) / CGFloat(itemCount)
         // １つのitemを生成
         // .absoluteは固定値で指定する方法
-        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(itemLength),
-                                                                             heightDimension: .absolute(itemLength)))
+        let item = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(widthDimension: .absolute(itemLength), heightDimension: .absolute(itemLength)))
         // itemを3つ横並びにしたグループを生成
         // .fractional~は親Viewとの割合
-        let items = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                                                          heightDimension: .fractionalHeight(1.0)),
-                                                       subitem: item,
-                                                       count: itemCount)
+        let items = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(itemLength)),subitem: item, count: 3)
         // グループ内のitem間のスペースを設定
         items.interItemSpacing = .fixed(itemSpacing)
         
         // 生成したグループ(items)が縦に並んでいくグループを生成（実質これがセクション）
-        let grid = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                                                       
-                                                                                       heightDimension: .estimated(itemLength)),
-                                                    subitems: [items])
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0)), subitems: [largeItem, grid])
+        let grid = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(itemLength * 3)),subitem: items, count: 3)
+        grid.interItemSpacing = .fixed(itemSpacing)
+
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),heightDimension: .absolute(itemLength * 3 + 70)), subitems: [largeItem, grid])
+       
         return NSCollectionLayoutSection(group: group)
     }
     
