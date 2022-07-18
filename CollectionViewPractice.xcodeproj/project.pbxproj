@@ -13,6 +13,17 @@
 		B2F0A0A428853CA300C97D13 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0A228853CA300C97D13 /* Main.storyboard */; };
 		B2F0A0A628853CA400C97D13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0A528853CA400C97D13 /* Assets.xcassets */; };
 		B2F0A0A928853CA400C97D13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0A728853CA400C97D13 /* LaunchScreen.storyboard */; };
+		B2F0A0B12885425900C97D13 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0B02885425900C97D13 /* ViewController2.swift */; };
+		B2F0A0B42885430D00C97D13 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0B22885430D00C97D13 /* CollectionViewCell.swift */; };
+		B2F0A0B52885430D00C97D13 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0B32885430D00C97D13 /* CollectionViewCell.xib */; };
+		B2F0A0B828854D5000C97D13 /* SRCircleProgress in Frameworks */ = {isa = PBXBuildFile; productRef = B2F0A0B728854D5000C97D13 /* SRCircleProgress */; };
+		B2F0A0BA288557EA00C97D13 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0B9288557EA00C97D13 /* ViewController3.swift */; };
+		B2F0A0C0288566DC00C97D13 /* CollectionViewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0BE288566DC00C97D13 /* CollectionViewCell1.swift */; };
+		B2F0A0C1288566DC00C97D13 /* CollectionViewCell1.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0BF288566DC00C97D13 /* CollectionViewCell1.xib */; };
+		B2F0A0C4288567BA00C97D13 /* CollectionViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0C2288567BA00C97D13 /* CollectionViewCell2.swift */; };
+		B2F0A0C5288567BA00C97D13 /* CollectionViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0C3288567BA00C97D13 /* CollectionViewCell2.xib */; };
+		B2F0A0C8288567F400C97D13 /* CollectionViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F0A0C6288567F400C97D13 /* CollectionViewCell3.swift */; };
+		B2F0A0C9288567F400C97D13 /* CollectionViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2F0A0C7288567F400C97D13 /* CollectionViewCell3.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +35,16 @@
 		B2F0A0A528853CA400C97D13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2F0A0A828853CA400C97D13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F0A0AA28853CA400C97D13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F0A0B02885425900C97D13 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
+		B2F0A0B22885430D00C97D13 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		B2F0A0B32885430D00C97D13 /* CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		B2F0A0B9288557EA00C97D13 /* ViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
+		B2F0A0BE288566DC00C97D13 /* CollectionViewCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell1.swift; sourceTree = "<group>"; };
+		B2F0A0BF288566DC00C97D13 /* CollectionViewCell1.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell1.xib; sourceTree = "<group>"; };
+		B2F0A0C2288567BA00C97D13 /* CollectionViewCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell2.swift; sourceTree = "<group>"; };
+		B2F0A0C3288567BA00C97D13 /* CollectionViewCell2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell2.xib; sourceTree = "<group>"; };
+		B2F0A0C6288567F400C97D13 /* CollectionViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell3.swift; sourceTree = "<group>"; };
+		B2F0A0C7288567F400C97D13 /* CollectionViewCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewCell3.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F0A0B828854D5000C97D13 /* SRCircleProgress in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +78,49 @@
 		B2F0A09B28853CA300C97D13 /* CollectionViewPractice */ = {
 			isa = PBXGroup;
 			children = (
+				B2F0A0BB2885580300C97D13 /* practice1 */,
+				B2F0A0BC2885581000C97D13 /* practice2 */,
+				B2F0A0BD2885583000C97D13 /* practice3 */,
 				B2F0A09C28853CA300C97D13 /* AppDelegate.swift */,
 				B2F0A09E28853CA300C97D13 /* SceneDelegate.swift */,
-				B2F0A0A028853CA300C97D13 /* ViewController.swift */,
 				B2F0A0A228853CA300C97D13 /* Main.storyboard */,
 				B2F0A0A528853CA400C97D13 /* Assets.xcassets */,
 				B2F0A0A728853CA400C97D13 /* LaunchScreen.storyboard */,
 				B2F0A0AA28853CA400C97D13 /* Info.plist */,
 			);
 			path = CollectionViewPractice;
+			sourceTree = "<group>";
+		};
+		B2F0A0BB2885580300C97D13 /* practice1 */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0A0A028853CA300C97D13 /* ViewController.swift */,
+			);
+			path = practice1;
+			sourceTree = "<group>";
+		};
+		B2F0A0BC2885581000C97D13 /* practice2 */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0A0B02885425900C97D13 /* ViewController2.swift */,
+				B2F0A0B22885430D00C97D13 /* CollectionViewCell.swift */,
+				B2F0A0B32885430D00C97D13 /* CollectionViewCell.xib */,
+			);
+			path = practice2;
+			sourceTree = "<group>";
+		};
+		B2F0A0BD2885583000C97D13 /* practice3 */ = {
+			isa = PBXGroup;
+			children = (
+				B2F0A0B9288557EA00C97D13 /* ViewController3.swift */,
+				B2F0A0C6288567F400C97D13 /* CollectionViewCell3.swift */,
+				B2F0A0C7288567F400C97D13 /* CollectionViewCell3.xib */,
+				B2F0A0BE288566DC00C97D13 /* CollectionViewCell1.swift */,
+				B2F0A0BF288566DC00C97D13 /* CollectionViewCell1.xib */,
+				B2F0A0C2288567BA00C97D13 /* CollectionViewCell2.swift */,
+				B2F0A0C3288567BA00C97D13 /* CollectionViewCell2.xib */,
+			);
+			path = practice3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +139,9 @@
 			dependencies = (
 			);
 			name = CollectionViewPractice;
+			packageProductDependencies = (
+				B2F0A0B728854D5000C97D13 /* SRCircleProgress */,
+			);
 			productName = CollectionViewPractice;
 			productReference = B2F0A09928853CA300C97D13 /* CollectionViewPractice.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +170,9 @@
 				Base,
 			);
 			mainGroup = B2F0A09028853CA300C97D13;
+			packageReferences = (
+				B2F0A0B628854D5000C97D13 /* XCRemoteSwiftPackageReference "SRCircleProgress" */,
+			);
 			productRefGroup = B2F0A09A28853CA300C97D13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +187,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F0A0C9288567F400C97D13 /* CollectionViewCell3.xib in Resources */,
+				B2F0A0C1288566DC00C97D13 /* CollectionViewCell1.xib in Resources */,
 				B2F0A0A928853CA400C97D13 /* LaunchScreen.storyboard in Resources */,
 				B2F0A0A628853CA400C97D13 /* Assets.xcassets in Resources */,
+				B2F0A0B52885430D00C97D13 /* CollectionViewCell.xib in Resources */,
 				B2F0A0A428853CA300C97D13 /* Main.storyboard in Resources */,
+				B2F0A0C5288567BA00C97D13 /* CollectionViewCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +204,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F0A0B42885430D00C97D13 /* CollectionViewCell.swift in Sources */,
+				B2F0A0C0288566DC00C97D13 /* CollectionViewCell1.swift in Sources */,
 				B2F0A0A128853CA300C97D13 /* ViewController.swift in Sources */,
+				B2F0A0BA288557EA00C97D13 /* ViewController3.swift in Sources */,
+				B2F0A0C8288567F400C97D13 /* CollectionViewCell3.swift in Sources */,
+				B2F0A0B12885425900C97D13 /* ViewController2.swift in Sources */,
+				B2F0A0C4288567BA00C97D13 /* CollectionViewCell2.swift in Sources */,
 				B2F0A09D28853CA300C97D13 /* AppDelegate.swift in Sources */,
 				B2F0A09F28853CA300C97D13 /* SceneDelegate.swift in Sources */,
 			);
@@ -358,6 +430,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2F0A0B628854D5000C97D13 /* XCRemoteSwiftPackageReference "SRCircleProgress" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Ryu0118/SRCircleProgress.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2F0A0B728854D5000C97D13 /* SRCircleProgress */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2F0A0B628854D5000C97D13 /* XCRemoteSwiftPackageReference "SRCircleProgress" */;
+			productName = SRCircleProgress;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B2F0A09128853CA300C97D13 /* Project object */;
 }

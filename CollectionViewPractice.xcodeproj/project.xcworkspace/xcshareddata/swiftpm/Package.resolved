@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "srcircleprogress",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Ryu0118/SRCircleProgress.git",
+      "state" : {
+        "revision" : "37a071b0850a239c4083220a92c23214f210e8aa",
+        "version" : "0.2.1"
+      }
+    }
+  ],
+  "version" : 2
+}
