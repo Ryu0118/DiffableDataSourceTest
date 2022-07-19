@@ -20,6 +20,9 @@ class CollectionViewCell3: UICollectionViewCell {
         // Initialization code
     }
     
+    func setProgress(_ progress: Float) {
+        baseView.setProgress(progress, animated: true)
+    }
     
 
 }
